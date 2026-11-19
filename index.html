@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f4f0e7">
+  <title>Kheops — Boutique en ligne</title>
+  <meta name="description" content="Objets de maison, accessoires et bien-être soigneusement sélectionnés.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="announcement">Livraison offerte dès 50 000 FCFA <span>✦</span> Paiement à la livraison disponible</div>
+  <header class="header">
+    <a class="logo" href="#top">kheops<span>.</span></a>
+    <nav aria-label="Navigation principale"><a href="#boutique">Boutique</a><a href="#univers">Notre univers</a><a href="#contact">Contact</a></nav>
+    <button class="cart-button" id="cart-button" aria-label="Ouvrir le panier"><span>Panier</span><b id="cart-count">0</b></button>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow"><i></i> DE BELLES CHOSES POUR LA VRAIE VIE</p>
+        <h1>Choisi avec soin.<br>Aimé chaque jour.</h1>
+        <p>Une sélection d’objets utiles, beaux et inspirants pour embellir votre quotidien.</p>
+        <a class="button dark" href="#boutique">Découvrir la collection <span>↗</span></a>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-photo"></div>
+        <div class="seal"><span>CHOISI<br>POUR VOUS</span><b>✳</b></div>
+      </div>
+    </section>
+
+    <section class="campaign" aria-labelledby="campaign-title">
+      <div class="campaign-copy">
+        <p class="eyebrow light">LE FILM KHEOPS</p>
+        <h2 id="campaign-title">Votre quotidien,<br>rehaussé.</h2>
+        <p>Une petite histoire en mouvement autour des objets qui rendent la maison plus chaleureuse.</p>
+        <button class="button play-button" id="play-film"><span class="play-icon">▶</span> Voir la vidéo publicitaire</button>
+      </div>
+      <button class="campaign-preview" id="preview-film" aria-label="Lire la vidéo publicitaire">
+        <div class="preview-art">
+          <div class="sun"></div><div class="vase"><i></i></div><div class="leaf leaf-one"></div><div class="leaf leaf-two"></div>
+        </div>
+        <span class="preview-play">▶</span>
+        <span class="preview-caption">Campagne 2026 · 12 secondes</span>
+      </button>
+    </section>
+
+    <section class="benefits" aria-label="Nos engagements">
+      <article><b>✳</b><div><strong>Choisi avec soin</strong><small>La qualité avant tout</small></div></article>
+      <article><b>⌁</b><div><strong>Livraison facile</strong><small>Chez vous, sans stress</small></div></article>
+      <article><b>♡</b><div><strong>Service attentionné</strong><small>On est là pour vous</small></div></article>
+      <article><b>↗</b><div><strong>Paiement flexible</strong><small>À la livraison ou en ligne</small></div></article>
+    </section>
+
+    <section class="shop" id="boutique">
+      <div class="section-heading"><div><p class="eyebrow">LA SÉLECTION</p><h2>Les coups de cœur<span>.</span></h2></div><a href="#boutique">Voir toute la collection →</a></div>
+      <div class="filters" aria-label="Filtrer les produits"><button class="active" data-category="Tous">Tout voir</button><button data-category="Maison">Maison</button><button data-category="Accessoires">Accessoires</button><button data-category="Bien-être">Bien-être</button></div>
+      <div class="product-grid" id="product-grid"></div>
+    </section>
+
+    <section class="story" id="univers">
+      <div class="story-photo"></div>
+      <div class="story-copy"><p class="eyebrow">L’ESPRIT KHEOPS</p><h2>Moins, mais mieux.</h2><p>Nous croyons aux objets qui trouvent naturellement leur place dans votre quotidien : beaux, utiles et faits pour durer.</p><a href="#contact">Découvrir notre histoire →</a></div>
+    </section>
+
+    <section class="newsletter"><p class="eyebrow light">UN PETIT MOT DE NOUS À VOUS</p><h2>Les belles trouvailles<br>dans votre boîte mail.</h2><form id="newsletter-form"><input type="email" required aria-label="Adresse e-mail" placeholder="Votre adresse e-mail"><button type="submit">Je m’inscris →</button></form></section>
+  </main>
+
+  <footer id="contact"><a class="logo" href="#top">kheops<span>.</span></a><p>De belles choses. Pour la vraie vie.</p><div><a href="mailto:bonjour@kheops.shop">Nous contacter</a><a href="#boutique">Livraison & retours</a></div></footer>
+
+  <aside class="drawer" id="cart-drawer" aria-hidden="true">
+    <div class="drawer-head"><div><p class="eyebrow">VOTRE SÉLECTION</p><h2>Votre panier</h2></div><button id="close-cart" aria-label="Fermer">×</button></div>
+    <div id="cart-items"></div>
+    <div class="cart-empty" id="cart-empty"><span>♡</span><p>Votre panier attend ses<br>premiers coups de cœur.</p></div>
+    <div class="cart-total" id="cart-total" hidden><div><span>Sous-total</span><strong id="cart-subtotal">0 FCFA</strong></div><button class="button dark" id="checkout">Passer commande →</button></div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <dialog class="film-dialog" id="film-dialog" aria-label="Vidéo publicitaire Kheops">
+    <button class="film-close" id="close-film" aria-label="Fermer la vidéo">×</button>
+    <div class="film" id="film">
+      <div class="film-slide active" data-slide="0"><div class="film-bg bg-one"><div class="graphic-sun"></div><div class="graphic-vase"><i></i></div><div class="film-title"><small>UN NOUVEL ART DE VIVRE</small><strong>Chez vous.</strong></div></div></div>
+      <div class="film-slide" data-slide="1"><div class="film-bg bg-two"><div class="graphic-leaf leaf-a"></div><div class="graphic-leaf leaf-b"></div><div class="film-title"><small>SELECTIONNÉ AVEC SOIN</small><strong>Pour longtemps.</strong></div></div></div>
+      <div class="film-slide" data-slide="2"><div class="film-bg bg-three"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="film-title logo-film"><small>LA BOUTIQUE QUI VOUS RESSEMBLE</small><strong>kheops<span>.</span></strong><em>De belles choses pour la vraie vie.</em></div></div></div>
+      <div class="film-progress"><i id="film-progress-bar"></i></div>
+      <div class="film-controls"><span id="film-counter">01 / 03</span><button id="film-toggle" aria-label="Pause">Ⅱ</button></div>
+    </div>
+  </dialog>
+  <div class="toast" id="toast" role="status"></div>
+</body>
+</html>
